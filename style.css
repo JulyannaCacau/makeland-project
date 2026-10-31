@@ -1,0 +1,383 @@
+/* Cores da identidade visual */
+:root {
+  --magenta: #a8195c;
+  --magenta-escuro: #7d1145;
+  --rosa-claro: #f7e4ec;
+  --bege: #f5f1ea;
+  --texto: #3a2a30;
+  --cinza: #8a7f84;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Mulish", "Segoe UI", Arial, sans-serif;
+  background-color: white;
+  color: var(--texto);
+  line-height: 1.6;
+}
+
+/* Menu */
+.menu {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 8%;
+  background: white;
+  border-top: 6px solid var(--magenta);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: var(--magenta);
+  text-decoration: none;
+}
+
+.logo span {
+  font-weight: 400;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+
+.links a,
+.link-carrinho {
+  color: var(--magenta);
+  text-decoration: none;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.links a:hover,
+.link-carrinho:hover {
+  text-decoration: underline;
+}
+
+.contador {
+  display: inline-block;
+  min-width: 22px;
+  padding: 0 6px;
+  margin-left: 4px;
+  border-radius: 11px;
+  background: var(--magenta);
+  color: white;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+/* Banner */
+.banner {
+  background: linear-gradient(120deg, var(--magenta-escuro), var(--magenta) 60%, #d04a86);
+  color: white;
+  padding: 90px 8%;
+}
+
+.banner h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  line-height: 1.1;
+}
+
+.banner p {
+  max-width: 480px;
+  margin-top: 15px;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* Conteúdo principal */
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.titulo-secao {
+  width: fit-content;
+  margin: 0 auto 40px;
+  color: var(--magenta);
+  font-size: 1.8rem;
+  font-weight: 700;
+  border-bottom: 3px solid var(--magenta);
+}
+
+/* Cards dos produtos */
+.produtos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.produto {
+  display: flex;
+  flex-direction: column;
+}
+
+.foto {
+  background: var(--bege);
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+
+.foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.produto:hover .foto img {
+  transform: scale(1.05);
+}
+
+.produto h3 {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.produto p {
+  font-size: 0.85rem;
+  color: var(--cinza);
+  flex-grow: 1;
+}
+
+.produto .preco {
+  flex-grow: 0;
+  margin: 10px 0 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--texto);
+}
+
+.botao-comprar {
+  padding: 10px;
+  background: var(--magenta);
+  color: white;
+  border: none;
+  font-family: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.botao-comprar:hover {
+  background: var(--magenta-escuro);
+}
+
+/* Instruções */
+.instrucoes {
+  margin-top: 70px;
+  padding: 45px 30px;
+  background: var(--rosa-claro);
+  text-align: center;
+}
+
+.instrucoes ol {
+  text-align: left;
+  max-width: 520px;
+  margin: 0 auto 25px;
+  padding-left: 20px;
+}
+
+.promo {
+  width: fit-content;
+  background: white;
+  border-left: 5px solid var(--magenta);
+  padding: 12px 20px;
+  margin: 0 auto 25px;
+}
+
+.botao {
+  background: var(--magenta);
+  color: white;
+  border: none;
+  padding: 14px 40px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.botao:hover {
+  background: var(--magenta-escuro);
+}
+
+/* Rodapé */
+.rodape {
+  background: var(--magenta);
+  color: white;
+  text-align: center;
+  padding: 25px;
+  font-size: 0.9rem;
+}
+
+/* Carrinho lateral */
+.fundo {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s;
+  z-index: 20;
+}
+
+.carrinho {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 380px;
+  max-width: 90%;
+  height: 100%;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.3s;
+  z-index: 30;
+}
+
+/* Classe adicionada pelo JavaScript para mostrar o carrinho */
+.aberto {
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.carrinho-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 25px;
+  border-top: 6px solid var(--magenta);
+  border-bottom: 1px solid #eee;
+}
+
+.carrinho-topo h2 {
+  color: var(--magenta);
+  font-size: 1.3rem;
+}
+
+.fechar {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: var(--cinza);
+}
+
+.itens-carrinho {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 10px 25px;
+}
+
+.vazio {
+  text-align: center;
+  color: var(--cinza);
+  margin-top: 40px;
+}
+
+.item {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.item img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  background: var(--bege);
+}
+
+.item-info {
+  flex-grow: 1;
+}
+
+.item-info h4 {
+  font-size: 0.95rem;
+}
+
+.item-info p {
+  font-size: 0.85rem;
+  color: var(--cinza);
+}
+
+.quantidade {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.quantidade button {
+  width: 26px;
+  height: 26px;
+  border: 1px solid var(--magenta);
+  background: white;
+  color: var(--magenta);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.carrinho-rodape {
+  padding: 20px 25px;
+  border-top: 1px solid #eee;
+}
+
+.linha {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.desconto {
+  color: var(--magenta);
+}
+
+.total {
+  font-size: 1.15rem;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+.carrinho-rodape .botao {
+  width: 100%;
+}
+
+/* Celular */
+@media (max-width: 600px) {
+  .links { gap: 18px; }
+  .banner { padding: 60px 6%; }
+  .banner h1 { font-size: 2rem; }
+}

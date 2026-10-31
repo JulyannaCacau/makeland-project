@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Makeland | Loja de Maquiagem</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="menu">
+    <a href="#" class="logo">Makeland</a>
+    <div class="links">
+      <a href="#produtos">Catálogo</a>
+      <button class="link-carrinho" onclick="simularCompra()">
+        Simular Compra: <span id="contador" class="contador">0</span>
+      </button>
+    </div>
+  </nav>
+
+  <header class="banner">
+    <div class="banner-texto">
+      <h1>Bem-vindo à Makeland</h1>
+      <p>Descubra os melhores produtos de maquiagem para realçar sua beleza.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="cardapio">
+      <h2>Nosso catálogo</h2>
+
+      <div class="produtos">
+        <article class="produto">
+          <span class="imagem"></span>
+          <img src="./assets/rimel.png" alt="Rimel" class="imagem">
+          <h3>Rimel</h3>
+          <p>Rimel com super durabilidade para alongar e escurecer os cílios.</p>
+          <p class="preco">R$ 15,00</p>
+          <button class="botao" onclick="simularCompra()">Comprar</button>
+        </article>
+
+        <article class="produto">
+          <span class="imagem"></span>
+          <img src="./assets/batom.png" alt="Batom" class="imagem">
+          <h3>Batom</h3>
+          <p>Batom de alta pigmentação para colorir os lábios.</p>
+          <p class="preco">R$ 9,50</p>
+          <button class="botao" onclick="simularCompra()">Comprar</button>
+        </article>
+
+        <article class="produto">
+          <span class="imagem"></span>
+          <img src="./assets/blush.png" alt="Blush" class="imagem">
+          <h3>Blush</h3>
+          <p>Blush com acabamento natural para dar cor ao rosto.</p>
+          <p class="preco">R$ 20,00</p>
+          <button class="botao" onclick="simularCompra()">Comprar</button>
+        </article>
+
+        <article class="produto">
+          <span class="imagem"></span>
+          <img src="./assets/sombra.jpg" alt="Sombra" class="imagem">
+          <h3>Sombra</h3>
+          <p>Sombra de grande pigmentação para criar maquiagens deslumbrantes.</p>
+          <p class="preco">R$ 40,00</p>
+          <button class="botao" onclick="simularCompra()">Comprar</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="instrucoes">
+      <h2>Como simular sua compra</h2>
+      <ol>
+        <li>Clique no botão <strong>Simular compra</strong>.</li>
+        <li>Digite a quantidade desejada de cada produto (digite <strong>0</strong> se não quiser o item).</li>
+        <li>Veja o resumo com o valor de cada produto e o total.</li>
+      </ol>
+      <p class="promo">Compras a partir de <strong>R$ 50,00</strong> ganham <strong>10% de desconto</strong>!</p>
+
+      <button class="botao" onclick="simularCompra()">Simular compra</button>
+    </section>
+  </main>
+
+  <div id="fundo" class="fundo" onclick="fecharPainel()"></div>
+  <aside id="painel" class="carrinho">
+    <div class="carrinho-topo">
+      <h2>Simular compra</h2>
+      <button class="fechar" onclick="fecharPainel()">✕</button>
+    </div>
+    <div id="resumo" class="itens-carrinho"></div>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+  <footer class="rodape">
+    <p>Desenvolvido por <strong>Julyanna Cacau</strong></p>
+  </footer>
